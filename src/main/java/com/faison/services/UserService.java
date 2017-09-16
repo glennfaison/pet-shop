@@ -5,19 +5,23 @@ import com.faison.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
+
+import javax.ejb.Local;
+import javax.ejb.Stateless;
 
 /**
  * Implementation of {@link UserService}
  */
-@Service
+@Stateless
+@Component
+@Local
 public class UserService implements IService<User> {
 
     @Autowired
     private UserRepository repository;
 
-    public UserService(UserRepository repository) {
-        this.repository = repository;
+    public UserService() {
     }
 
     /**

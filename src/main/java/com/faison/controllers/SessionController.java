@@ -16,14 +16,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.ejb.EJB;
+
 @RestController
 @RequestMapping("/api/sessions")
 @Api(value = "Session Rest Controller", consumes = "Session")
 public class SessionController {
 
-    @Autowired
+    @EJB
     private SessionService service;
-    @Autowired
+    @EJB
     private UserService userService;
 
     public SessionController(SessionService service) {
@@ -34,7 +36,7 @@ public class SessionController {
      * Create a new session in the system.
      *
      * @param password the password of the user who is attempting to login
-     * @param email the email of the user who is attempting to login
+     * @param email    the email of the user who is attempting to login
      * @return an HttpStatus.CREATED if session was successfully created
      * @see SessionService#create(Session)
      */

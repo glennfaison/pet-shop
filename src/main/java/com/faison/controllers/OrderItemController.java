@@ -14,12 +14,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.ejb.EJB;
+
 @RestController
 @RequestMapping(value = "/api/orderItems")
 @Api(value = "OrderItem Rest Controller")
 public class OrderItemController {
 
-    @Autowired
+    @EJB
     private OrderItemService service;
 
     /**
@@ -76,7 +78,7 @@ public class OrderItemController {
     /**
      * Updates an existing orderItem.
      *
-     * @param id    the id of the orderItem been orderItem
+     * @param id        the id of the orderItem been orderItem
      * @param orderItem an orderItem instance to persist
      * @return the orderItem orderItem or an HttpStatus.NOT_FOUND if the orderItem been
      * orderItem does not exist

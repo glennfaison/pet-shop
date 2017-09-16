@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.ejb.EJB;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +24,7 @@ import java.util.List;
 @Api(value = "Product Rest Controller")
 public class ProductController {
 
-    @Autowired
+    @EJB
     private ProductService service;
 
     public ProductController(ProductService service) {

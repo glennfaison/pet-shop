@@ -5,16 +5,24 @@ import com.faison.repositories.SessionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
+
+import javax.ejb.Local;
+import javax.ejb.Stateless;
 
 /**
  * Implementation of {@link SessionService}
  */
-@Service
+@Stateless
+@Component
+@Local
 public class SessionService implements IService<Session> {
 
     @Autowired
     private SessionRepository repository;
+
+    public SessionService() {
+    }
 
     /**
      * Check for the existence of a {@link Session} with given id.

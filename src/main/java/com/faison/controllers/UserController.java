@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.ejb.EJB;
 import java.util.ArrayList;
 
 /**
@@ -29,7 +30,7 @@ import java.util.ArrayList;
 @Api(value = "User Rest Controller")
 public class UserController {
 
-    @Autowired
+    @EJB
     private UserService service;
 
     public UserController(UserService service) {

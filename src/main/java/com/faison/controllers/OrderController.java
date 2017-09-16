@@ -16,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.ejb.EJB;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -32,7 +33,7 @@ import java.util.List;
 @Api(value = "Order Rest Controller")
 public class OrderController {
 
-    @Autowired
+    @EJB
     private OrderService service;
 
     public OrderController(OrderService service) {

@@ -9,12 +9,12 @@ public class MyService {
 
     private MyEjbLocal ejb;
 
-    @EJB
-    public void setMyEjbLocal(MyEjbLocal ejb){
-        this.ejb = ejb;
+    public MyEjbLocal getMyEjbLocal() {
+        return ejb;
     }
 
-    public MyEjbLocal getMyEjbLocal(){
-        return ejb;
+    @EJB
+    public void setMyEjbLocal(MyEjbLocal ejb) {
+        this.ejb = ejb;
     }
 }

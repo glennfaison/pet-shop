@@ -5,9 +5,14 @@ import com.faison.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+import javax.ejb.Local;
+import javax.ejb.Stateless;
+
+@Stateless
+@Component
+@Local
 public class CategoryService implements IService<Category> {
 
     @Autowired

@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.ejb.EJB;
 import java.util.ArrayList;
 
 @RestController
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 @Api(value = "Category Rest Controller")
 public class CategoryController {
 
-    @Autowired
+    @EJB
     private CategoryService service;
 
     /**

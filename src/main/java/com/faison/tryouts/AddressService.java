@@ -1,7 +1,8 @@
-package com.faison.services;
+package com.faison.tryouts;
 
-import com.faison.models.Supplier;
-import com.faison.repositories.SupplierRepository;
+import com.faison.models.Address;
+import com.faison.repositories.AddressRepository;
+import com.faison.services.IService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,16 +14,16 @@ import javax.ejb.Stateless;
 @Stateless
 @Component
 @Local
-public class SupplierService implements IService<Supplier> {
+public class AddressService implements IService<Address> {
 
     @Autowired
-    private SupplierRepository repository;
+    private AddressRepository repository;
 
-    public SupplierService() {
+    public AddressService() {
     }
 
     /**
-     * Check for the existence of a {@link Supplier} with given id.
+     * Check for the existence of a {@link Address} with given id.
      *
      * @param id The id to search for.
      * @return true if such a record exists, and false otherwise.
@@ -35,12 +36,12 @@ public class SupplierService implements IService<Supplier> {
     }
 
     /**
-     * Create and save a new {@link Supplier}.
+     * Create and save a new {@link Address}.
      *
      * @param record The record to be persisted
      * @return the saved record
      */
-    public Supplier create(Supplier record) {
+    public Address create(Address record) {
         if (exists(record.getId())) {
             return null;
         }
@@ -49,47 +50,51 @@ public class SupplierService implements IService<Supplier> {
     }
 
     /**
-     * Find the {@link Supplier} with the given id.
+     * Find the {@link Address} with the given id.
      *
      * @param id The id to be searched for.
-     * @return {@link Supplier}
+     * @return {@link Address}
      * the record if found, and null otherwise.
      */
-    public Supplier findById(String id) {
+    public Address findById(String id) {
         return repository.findOne(id);
     }
 
     /**
-     * Return all available {@link Supplier} in pages.
+     * Return all available {@link Address} in pages.
      *
      * @param pageable The page number and size to be returned.
      * @return the given page of records.
      */
-    public Page<Supplier> findAll(Pageable pageable) {
+    public Page<Address> findAll(Pageable pageable) {
         return repository.findAll(pageable);
     }
 
-    public Page<Supplier> findByNameLike(String name, Pageable pageable) {
-        return repository.findByNameLike(name, pageable);
+    public Page<Address> findByStreetLike(String street, Pageable pageable) {
+        return repository.findByStreetLike(street, pageable);
     }
 
-    public Page<Supplier> findByEmailLike(String email, Pageable pageable) {
-        return repository.findByEmailLike(email, pageable);
+    public Page<Address> findByCityLike(String city, Pageable pageable) {
+        return repository.findByCityLike(city, pageable);
     }
 
-    public Page<Supplier> findByPhoneNumberLike(String phoneNumber, Pageable pageable) {
-        return repository.findByPhoneNumberLike(phoneNumber, pageable);
+    public Page<Address> findByStateLike(String state, Pageable pageable) {
+        return repository.findByStateLike(state, pageable);
+    }
+
+    public Page<Address> findByCountryLike(String country, Pageable pageable) {
+        return repository.findByCountryLike(country, pageable);
     }
 
     /**
-     * Update an existing {@link Supplier} with the specified id.
+     * Update an existing {@link Address} with the specified id.
      *
      * @param id     The id of the record to update.
      * @param record The record to be updated.
-     * @return {@link Supplier}
+     * @return {@link Address}
      * the saved record, if update was successful, or null if the update was unsuccessful.
      */
-    public Supplier updateById(String id, Supplier record) {
+    public Address updateById(String id, Address record) {
         if (!exists(id)) {
             return null;
         }
@@ -98,7 +103,7 @@ public class SupplierService implements IService<Supplier> {
     }
 
     /**
-     * Delete the {@link Supplier} with the specified id.
+     * Delete the {@link Address} with the specified id.
      *
      * @param id The id of the record to be deleted.
      */
