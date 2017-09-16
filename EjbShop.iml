@@ -111,6 +111,8 @@
     <orderEntry type="library" name="Maven: org.apache.xmlbeans:xmlbeans:2.6.0" level="project" />
     <orderEntry type="library" name="Maven: stax:stax-api:1.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" level="project" />
-    <orderEntry type="library" name="ejb-3.2" level="application" />
+    <orderEntry type="library" name="Maven: org.glassfish.main.ejb:javax.ejb:3.1.2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.main.transaction:javax.transaction:3.1.2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.main.javaee-api:javax.annotation:3.1.2.2" level="project" />
   </component>
 </module>
